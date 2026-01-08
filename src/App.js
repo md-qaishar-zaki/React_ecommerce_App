@@ -1,22 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React,{ useEffect, useState } from 'react';
 function App() {
+  const [name,setName] = useState("")
+
+  useEffect(()=>{
+    const timerId = setTimeout(() => {
+      if (name !== "") {
+        console.log(name)        
+      }
+    }, 1000);
+
+    return ()=>{
+      clearTimeout(timerId)
+    }
+  },[name])
+  function updateName(e){
+    setName(e.target.value)
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <form>
+          <input type='text' onChange={updateName} placeholder='Inter Your Name'/>
+          <h1>Hii {name}</h1>
+        </form>
       </header>
     </div>
   );
