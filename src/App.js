@@ -1,29 +1,15 @@
-import './App.css';
-import React,{ useEffect, useState } from 'react';
+import './App.css'; 
+// import Debossing from './Debossing';
+// import UseReference from './UseReference';
+import Usememo from './Usememo';
 function App() {
-  const [name,setName] = useState("")
-
-  useEffect(()=>{
-    const timerId = setTimeout(() => {
-      if (name !== "") {
-        console.log(name)        
-      }
-    }, 1000);
-
-    return ()=>{
-      clearTimeout(timerId)
-    }
-  },[name])
-  function updateName(e){
-    setName(e.target.value)
-  }
+   
   return (
     <div className="App">
       <header className="App-header">
-        <form>
-          <input type='text' onChange={updateName} placeholder='Inter Your Name'/>
-          <h1>Hii {name}</h1>
-        </form>
+        {/* <Debossing /> */}
+        {/* <UseReference /> */}
+        <Usememo />
       </header>
     </div>
   );
