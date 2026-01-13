@@ -1,7 +1,8 @@
+import APICall from './APICall';
 import './App.css'; 
+// import UseMemoHooks from './UseMemoHooks';
 // import Debossing from './Debossing';
-// import UseReference from './UseReference';
-import Usememo from './Usememo';
+// import UseReference from './UseReference'; 
 function App() {
    
   return (
@@ -9,7 +10,8 @@ function App() {
       <header className="App-header">
         {/* <Debossing /> */}
         {/* <UseReference /> */}
-        <Usememo />
+        {/* <UseMemoHooks /> */}
+        <APICall/>
       </header>
     </div>
   );
